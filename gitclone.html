@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Documenation Git</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">Doc Git</a>
+    </header>
+    <main>
+        <aside>
+            <h2>Commandes</h2>
+            <ul>
+                <li><a href="./gitinit.html">git init</a></li>
+                <li><a href="./gitadd.html">git add</a></li>
+                <li><a href="./gitcommit.html">git commit</a></li>
+                <li><a href="./gitpush.html">git push</a></li>
+                <li><a href="./gitpull.html">git pull</a></li>
+                <li class="actuel"><a href="./gitclone.html">git clone</a></li>
+                <li><a href="./gitremote.html">git remote</a></li>
+                <li><a href="./gitcheckout.html">git checkout (branch)</a></li>
+                <li><a href="./gitbranch.html">git branch</a></li>
+                <li><a href="./gitmerge.html">git merge</a></li>
+                <li><a href="./gitstatus.html">git status</a></li>
+                <li><a href="./gitlog.html">git log</a></li>
+                <li><a href="./gitrevert.html">git revert</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>git clone</h1>
+            <div>
+                <h2>Utilité</h2>
+                <p>
+                    <code>git clone</code> permet de cloner un dépôt dans un nouveau répertoire.
+                </p>
+                <h2>Commande</h2>
+                <div>
+                    <pre>    
+<em>git clone</em> [--template=(template-directory)]
+          [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+          [-o (name)] [-b (name)] [-u (upload-pack)] [--reference (repository)]
+          [--dissociate] [--separate-git-dir (git-dir)]
+          [--depth (depth)] [--[no-]single-branch] [--no-tags]
+          [--recurse-submodules[=(pathspec)]] [--[no-]shallow-submodules]
+          [--[no-]remote-submodules] [--jobs (n)] [--sparse] [--[no-]reject-shallow]
+          [--filter=(filter)] [--] (repository)
+          [(directory)]
+                    </pre>
+                </div>
+                <h2>Description</h2>
+                <p>
+                    La commande git clone clone un dépôt dans un répertoire nouvellement créé, crée une branche de suivi à distance pour 
+                    chaque branche du dépôt cloné et crée et extrait une branche initiale qui est dupliquée depuis la branche active actuelle du dépôt cloné.
+                </p>
+                <h2>Options</h2>
+                <ul>
+                    <li>
+                        <code>-q</code>
+                        <br>
+                        <code>--quiet</code>
+                        <p>Mode silencieux. L’avancement n’est pas affiché sur le flux d’erreur standard.</p>
+                    </li>
+                    <li>
+                        <code>-o (name)</code>
+                        <br>
+                        <code>--origin (name)</code>
+                        <p>Au lieu d’utiliser le nom de distant origin pour suivre le dépôt amont, utilise (name).</p>
+                    </li>
+                    <li>
+                        <code>-b (name)</code>
+                        <br>
+                        <code>--branch (name)</code>
+                        <p>
+                            Au lieu de pointer la HEAD nouvellement créée sur la branche pointée par la HEAD du dépôt cloné, pointe plutôt sur la branche (name). 
+                            Dans un dépôt non-nu, c’est la branche qui sera extraite.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

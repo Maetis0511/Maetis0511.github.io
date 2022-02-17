@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Documenation Git</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">Doc Git</a>
+    </header>
+    <main>
+        <aside>
+            <h2>Commandes</h2>
+            <ul>
+                <li><a href="./gitinit.html">git init</a></li>
+                <li class="actuel"><a href="./gitadd.html">git add</a></li>
+                <li><a href="./gitcommit.html">git commit</a></li>
+                <li><a href="./gitpush.html">git push</a></li>
+                <li><a href="./gitpull.html">git pull</a></li>
+                <li><a href="./gitclone.html">git clone</a></li>
+                <li><a href="./gitremote.html">git remote</a></li>
+                <li><a href="./gitcheckout.html">git checkout (branch)</a></li>
+                <li><a href="./gitbranch.html">git branch</a></li>
+                <li><a href="./gitmerge.html">git merge</a></li>
+                <li><a href="./gitstatus.html">git status</a></li>
+                <li><a href="./gitlog.html">git log</a></li>
+                <li><a href="./gitrevert.html">git revert</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>git add</h1>
+            <div>
+                <h2>Utilité</h2>
+                <p>
+                    <code>git add</code> permet d'ajouter le contenu des fichiers à l'index.
+                </p>
+                <h2>Commande</h2>
+                <div>
+                    <pre>    
+<em>git add</em>  [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+         [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]] [--sparse]
+         [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
+         [--chmod=(+|-)x] [--pathspec-from-file=(file) [--pathspec-file-nul]]
+         [--] [(pathspec)…​]
+                    </pre>
+                </div>
+                <h2>Description</h2>
+                <p>
+                    Cette commande met à jour l'index en utilisant le contenu actuel trouvé dans le répertoire de travail, 
+                    afin de préparer le contenu pour le prochain commit. Elle peut également être utilisée pour ajouter 
+                    du contenu avec seulement une partie des changements apportés au travail.
+                </p>
+                <p>
+                    L'"index" contient une snapshot du contenu du répertoire Git, et c'est cet snapshot qui est 
+                    pris comme contenu du prochain commit. Ainsi, après avoir apporté des modifications aux fichiers, 
+                    et avant d'exécuter la commande commit, vous devez utiliser la commande add pour ajouter 
+                    tout fichier nouveau ou modifié à l'index.
+                </p>
+                <p>    
+                    Cette commande peut être exécutée plusieurs fois avant une livraison. Elle ajoute seulement le 
+                    contenu du ou des fichiers spécifiés au moment où la commande add est exécutée, si vous voulez 
+                    que les changements ultérieurs soient inclus dans la prochaine livraison, vous devez alors exécuter 
+                    git add à nouveau pour ajouter le nouveau contenu à l'index.
+                </p>
+                <h2>Options</h2>
+                <ul>
+                    <li>
+                        <code>(pathspec)...</code>
+                        <p>
+                            Fichiers dont il faut ajouter le contenu. Des bulles de fichiers (par exemple *.c) peuvent 
+                            être données pour ajouter tous les fichiers correspondants. De même, un nom de répertoire 
+                            en tête (par exemple dir pour ajouter dir/file1 et dir/file2) peut être donné pour mettre à 
+                            jour l'index afin qu'il corresponde à l'état actuel du répertoire dans son ensemble 
+                            (par exemple, spécifier dir enregistrera non seulement un fichier dir/file1 modifié dans 
+                            la branche de travail, un fichier dir/file2 ajouté au répertoire de travail, mais aussi 
+                            un fichier dir/file3 supprimé des fichiers).
+                        </p>
+                    </li>
+                    <li>
+                        <code>-n</code>
+                        <br>
+                        <code>--dry-run</code>
+                        <p>Ne pas ajouter réellement le(s) fichier(s), juste montrer s'ils existent et/ou seront ignorés.</p>
+                    </li>
+                    <li>
+                        <code>-i</code>
+                        <br>
+                        <code>--interactive</code>
+                        <p>
+                            Ajoute le contenu modifié de la branche de manière interactive à l'index. Des arguments de chemin 
+                            optionnels peuvent être fournis pour limiter l'opération à un sous-ensemble des dossiers du projet.
+                        </p>
+                    </li>
+                    <li>
+                        <code>-p</code>
+                        <br>
+                        <code>--patch</code>
+                        <p>
+                            Choisir interactivement des morceaux de patch entre l'index et le répertoire de travail et les ajoute à l'index. 
+                            Cela donne à l'utilisateur une chance de revoir la différence avant d'ajouter le contenu modifié à l'index.
+
+                            Ceci exécute effectivement add --interactive, mais contourne le menu de commande initial et passe directement 
+                            à la sous-commande patch.
+                        </p>
+                    </li>
+                    <li>
+                        <code>-e</code>
+                        <br>
+                        <code>--edit</code>
+                        <p>
+                            Ouvre le différentiel par rapport à l'index dans un éditeur et laisse l'utilisateur le modifier. Après la fermeture 
+                            de l'éditeur, applique le patch à l'index.
+
+                            L'intention de cette option est de choisir les lignes du patch à appliquer, ou même de modifier le contenu des lignes 
+                            à mettre en scène.
+                        </p>
+                    </li>
+                    <li>
+                        <code>-u</code>
+                        <br>
+                        <code>--update</code>
+                        <p>
+                            Met à jour l'index juste là où il a déjà une entrée correspondant à (pathspec). Ceci supprime et modifie les entrées 
+                            de l'index, mais n'ajoute aucun nouveau fichier.
+                        </p>
+                    </li>
+                    <li>
+                        <code>-A</code>
+                        <br>
+                        <code>--all</code>
+                        <p>
+                            Met à jour l'index non seulement lorsque l'arbre de travail possède un fichier correspondant à (pathspec) mais 
+                            aussi lorsque l'index possède déjà une entrée. Ceci ajoute, modifie et supprime les entrées de l'index 
+                            pour correspondre au répertoire de travail.
+                        </p>
+                    </li>
+                    <li>
+                        <code>--refresh</code>
+                        <p>Ne pas ajouter le(s) fichier(s), mais seulement rafraîchir leurs informations stat() dans l'index.</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

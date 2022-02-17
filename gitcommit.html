@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Documenation Git</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">Doc Git</a>
+    </header>
+    <main>
+        <aside>
+            <h2>Commandes</h2>
+            <ul>
+                <li><a href="./gitinit.html">git init</a></li>
+                <li><a href="./gitadd.html">git add</a></li>
+                <li class="actuel"><a href="./gitcommit.html">git commit</a></li>
+                <li><a href="./gitpush.html">git push</a></li>
+                <li><a href="./gitpull.html">git pull</a></li>
+                <li><a href="./gitclone.html">git clone</a></li>
+                <li><a href="./gitremote.html">git remote</a></li>
+                <li><a href="./gitcheckout.html">git checkout (branch)</a></li>
+                <li><a href="./gitbranch.html">git branch</a></li>
+                <li><a href="./gitmerge.html">git merge</a></li>
+                <li><a href="./gitstatus.html">git status</a></li>
+                <li><a href="./gitlog.html">git log</a></li>
+                <li><a href="./gitrevert.html">git revert</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>git commit</h1>
+            <div>
+                <h2>Utilité</h2>
+                <p>
+                    <code>git commit</code> enregistre les modifications dans le dépôt.
+                </p>
+                <h2>Commande</h2>
+                <div>
+                    <pre>    
+<em>git commit</em> [-a | --interactive | --patch] [-s] [-v] [-u(mode)] [--amend]
+           [--dry-run] [(-c | -C | --fixup | --squash) (commit)]
+           [-F (fichier) | -m (msg)] [--reset-author] [--allow-empty]
+           [--allow-empty-message] [--no-verify] [-e] [--author=(auteur)]
+           [--date=(date)] [--cleanup=(mode)] [--[no-]status]
+           [-i | -o] [--pathspec-from-file=(fichier) [--pathspec-file-nul]]
+           [-S[(idclé)]] [--] [(pathspec)…​]
+                    </pre>
+                </div>
+                <h2>Description</h2>
+                <p>
+                    Crée un nouveau commit contenant le contenu actuel de l’index et avec le message de validation décrivant la modification. 
+                    Le nouveau commit est un fils direct de HEAD, habituellement au sommet de la branche actuelle et la branche est mise à 
+                    jour pour pointer dessus.
+                </p>
+                <h2>Options</h2>
+                <ul>
+                    <li>
+                        <code>-a</code>
+                        <br>
+                        <code>-all</code>
+                        <p>
+                            Indique à la commande d’indexer automatiquement les fichiers qui ont été modifiés ou supprimés, mais les nouveaux 
+                            fichiers dont vous n’avez pas signalé la présence à Git ne sont pas affectés.
+                        </p>
+                    </li>
+                    <li>
+                        <code>-p</code>
+                        <br>
+                        <code>--patch</code>
+                        <p>Utilise la sélection interactive de correctif pour choisir quelles modifications valider. Référez-vous à <a href="./gitadd.html">git add</a> pour plus de détails.</p>
+                    </li>
+                    <li>
+                        <code>-C (commit)</code>
+                        <br>
+                        <code>--reuse-message=(commit)</code>
+                        <p>Prend un objet commit existant et réutilise son message de validation et son information d’auteur (y compris l’horodatage) pour la création du commit.</p>
+                    </li>
+                    <li>
+                        <code>-c</code>
+                        <br>
+                        <code>--reedit-message=(commit)</code>
+                        <p>Comme -C, mais avec -c, l’éditeur est appelé pour permettre à l’utilisateur de modifier le message de validation.</p>
+                    </li>
+                    <li>
+                        <code>--branch</code>
+                        <p>Montre la branche et l’information de suivi, y compris en format court.</p>
+                    </li>
+                    <li>
+                        <code>-m (message)</code>
+                        <br>
+                        <code>--message=(message)</code>
+                        <p>Utiliser le (message) fourni comme message de validation. Si plusieurs options -m sont fournies, leurs valeurs sont concaténées comme paragraphes séparés.</p>
+                        <p>L’option -m est incompatible avec -c, -C ou -F.</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

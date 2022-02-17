@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Documenation Git</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">Doc Git</a>
+    </header>
+    <main>
+        <aside>
+            <h2>Commandes</h2>
+            <ul>
+                <li><a href="./gitinit.html">git init</a></li>
+                <li><a href="./gitadd.html">git add</a></li>
+                <li><a href="./gitcommit.html">git commit</a></li>
+                <li><a href="./gitpush.html">git push</a></li>
+                <li><a href="./gitpull.html">git pull</a></li>
+                <li><a href="./gitclone.html">git clone</a></li>
+                <li><a href="./gitremote.html">git remote</a></li>
+                <li><a href="./gitcheckout.html">git checkout (branch)</a></li>
+                <li><a href="./gitbranch.html">git branch</a></li>
+                <li><a href="./gitmerge.html">git merge</a></li>
+                <li><a href="./gitstatus.html">git status</a></li>
+                <li><a href="./gitlog.html">git log</a></li>
+                <li class="actuel"><a href="./gitrevert.html">git revert</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>git revert</h1>
+            <div>
+                <h2>Utilité</h2>
+                <p>
+                    <code>git revert</code> permet de revenir sur certains commits existants.
+                </p>
+                <h2>Commande</h2>
+                <div>
+                    <pre>    
+<em>git revert</em> [--[no-]edit] [-n] [-m parent-number] [-s] [-S[(keyid)]] (commit)…​
+<em>git revert</em> (--continue | --skip | --abort | --quit)
+                    </pre>
+                </div>
+                <h2>Description</h2>
+                <p>
+                    La commande git revert est utilisée pour enregistrer de nouveaux commits afin d'inverser l'effet de certains commits précédents.
+                </p>
+                <h2>Options</h2>
+                <ul>
+                    <li>
+                        <code>-e</code>
+                        <br>
+                        <code>--edit</code>
+                        <p>
+                            Avec cette option, git revert vous laissera éditer le message de commit avant de commiter le revert. 
+                            C'est l'option par défaut si vous exécutez la commande depuis un terminal.
+                        </p>
+                    </li>
+                    <li>
+                        <code>--continue</code>
+                        <p>
+                            Continue l'opération en cours en utilisant les informations dans .git/sequencer. Peut être utilisé pour 
+                            continuer après avoir résolu les conflits dans un cherry-pick ou un revert qui a échoué.
+                        </p>
+                    </li>
+                    <li>
+                        <code>--skip</code>
+                        <p>Saute le commit courant et continue avec le reste de la séquence.</p>
+                    </li>
+                    <li>
+                        <code>--quit</code>
+                        <p>Oublie l'opération courante en cours. Peut être utilisé pour effacer l'état du séquenceur après l'échec d'un cherry-pick ou d'un revert.</p>
+                    </li>
+                    <li>
+                        <code>--abort</code>
+                        <p>Annule l'opération et retourne à l'état pré-séquence.</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

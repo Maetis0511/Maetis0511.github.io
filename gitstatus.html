@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index_deviant.css">
+    <title>Documenation Git</title>
+</head>
+<body>
+    <header>
+        <a href="./index.html">Doc Git</a>
+    </header>
+    <main>
+        <aside>
+            <h2>Commandes</h2>
+            <ul>
+                <li><a href="./gitinit.html">git init</a></li>
+                <li><a href="./gitadd.html">git add</a></li>
+                <li><a href="./gitcommit.html">git commit</a></li>
+                <li><a href="./gitpush.html">git push</a></li>
+                <li><a href="./gitpull.html">git pull</a></li>
+                <li><a href="./gitclone.html">git clone</a></li>
+                <li><a href="./gitremote.html">git remote</a></li>
+                <li><a href="./gitcheckout.html">git checkout (branch)</a></li>
+                <li><a href="./gitbranch.html">git branch</a></li>
+                <li><a href="./gitmerge.html">git merge</a></li>
+                <li class="actuel"><a href="./gitstatus.html">git status</a></li>
+                <li><a href="./gitlog.html">git log</a></li>
+                <li><a href="./gitrevert.html">git revert</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h1>git status</h1>
+            <div>
+                <h2>Utilité</h2>
+                <p>
+                    <code>git status</code> montre le statut de l’arbre de travail.
+                </p>
+                <h2>Commande</h2>
+                <div>
+                    <pre>    
+<em>git status</em> [(options)…​] [--] [(pathspec)…​]
+                    </pre>
+                </div>
+                <h2>Description</h2>
+                <p>
+                    Montre les chemins qui ont des différences entre le fichier d’index et le commit HEAD actuel, 
+                    les chemins qui ont des différences entre l’arbre de travail et de fichier d’index, et les 
+                    chemins dans l’arbre de travail qui ne sont pas suivis par Git.
+                </p>
+                <h2>Options</h2>
+                <ul>
+                    <li>
+                        <code>-b</code>
+                        <br>
+                        <code>--branch</code>
+                        <p>Montre la branche et l’information de suivi, y compris en format court.</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
